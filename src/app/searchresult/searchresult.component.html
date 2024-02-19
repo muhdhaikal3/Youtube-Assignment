@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h2 class="mt-4 mb-3 text-center">Search Results for "{{ query }}"</h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-xl-6" *ngFor="let video of videos">
+          <div class="card mb-4 shadow-lg video-card">
+            <img [src]="video.snippet.thumbnails.high.url" class="card-img-top" alt="Video Thumbnail">
+            <div class="card-body">
+              <h5 class="card-title">{{ video.snippet.title }}</h5>
+              <p class="card-text">{{ video.snippet.description }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between align-items-center">
+              <small class="text-muted">{{ video.snippet.channelTitle }}</small>
+              <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank" class="btn btn-danger btn-sm">Watch Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
